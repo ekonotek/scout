@@ -16,8 +16,8 @@ List,
   IconButton,
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
-import memberRoles from './memberRoles'
 
+import Derecha from './Components/derecha'
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -95,22 +95,7 @@ function App() {
             border={1}
             borderColor="green"
           >
-<pre>{JSON.stringify(memberRoles,null,2)}</pre>
-{/* <List display="flex" flexWrap="wrap" justifyContent="flex-start">
-          {edges &&
-            edges.map((member) => (
-              // <memberCard
-              //   classes={classes}
-              //   elemClicked={this.props.elemClicked}
-              //   member={member.node}
-              // />
-              <RoleListItem
-                classes={classes}
-                key={member.node.id}
-                member={member.node}
-              />
-            ))}
-        </List> */}
+            <Derecha />
           </Box>
         </Box>
         <Box
