@@ -14,14 +14,19 @@ export default function RoleListItem(props) {
   const { 
     // classes, 
     member } = props;
-
+  const urlFile =
+    window.location.protocol +
+    "//" +
+    window.location.host +
+    "/public/images/account.svg";
+  
   return (
   <React.Fragment>
 
     <ListItem>
-      {/* <ListItemAvatar>
-        <Avatar alt="Remy Sharp" src={} />
-      </ListItemAvatar> */}
+      <ListItemAvatar>
+        <Avatar alt="Remy Sharp" src={urlFile} />
+      </ListItemAvatar>
       <ListItemText
         disableTypography={true}
         primary={member.role}
