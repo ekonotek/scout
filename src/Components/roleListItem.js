@@ -14,11 +14,7 @@ export default function RoleListItem(props) {
   const { 
     // classes, 
     member } = props;
-  const urlFile =
-    window.location.protocol +
-    "//" +
-    window.location.host +
-    "/public/images/account.svg";
+  const urlFile = "https://zl3yo.csb.app" + "/images/account.svg";
   
   return (
   <React.Fragment>
