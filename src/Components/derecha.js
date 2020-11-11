@@ -18,11 +18,14 @@ return(
 <Box container>
 {/* <pre>memberRoles: {JSON.stringify(memberRoles,null,2)}</pre> */}
 
-<Box>
+{/* <Box> */}
 <RoleList memberRoles={memberRoles} />
-</Box>
-<Box>
-<Button size="small" variant="contained" color="secondary" >Membership Details</Button>
+{/* </Box> */}
+<Box align="center" border={1}>
+  <Button size="small" variant="contained" 
+          color="secondary" >
+            Membership Details
+  </Button>
 
 </Box>
 

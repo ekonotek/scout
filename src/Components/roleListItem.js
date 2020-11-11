@@ -17,9 +17,7 @@ export default function RoleListItem(props) {
   const urlFile = "https://zl3yo.csb.app" + "/images/account.svg";
   
   return (
-  <React.Fragment>
-
-    <ListItem>
+    <ListItem alignItems="flex-start" dense="true">
       <ListItemAvatar>
         <Avatar alt="Remy Sharp" src={urlFile} />
       </ListItemAvatar>
@@ -30,6 +28,5 @@ export default function RoleListItem(props) {
         />
       <Button size="small" variant="contained" color="secondary" >Learn More</Button>
     </ListItem>
-  </React.Fragment>
   );
 }

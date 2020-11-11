@@ -1,6 +1,7 @@
 import React from "react";
 import {
   Avatar,
+  Box,
   List,
   ListItem,
   Divider,
@@ -17,12 +18,16 @@ export default function RoleList(props) {
 
 return(
   // <pre> ListItem-List memberRoles: {JSON.stringify(memberRoles,null,2)}</pre>
-<React.Fragment>
-      <Typography variant="h6" component="div">
+<Box border={1}>
+      <Typography variant="h6" align="center">
           Create Your Profile
       </Typography>
   
-        <List display="flex" flexWrap="wrap" justifyContent="flex-start">
+        <List 
+              // display="flex" 
+              // flexWrap="wrap" 
+              // justifyContent="flex-start"
+        >
           {memberRoles &&
             memberRoles.data.map((member, i) => (
               
@@ -35,6 +40,6 @@ return(
               ))
             }
         </List>
-            </React.Fragment>
+</Box>
       )
 }
