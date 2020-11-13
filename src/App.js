@@ -9,25 +9,26 @@ import {
   AppBar,
   Badge,
   Box,
-List,
+  List,
   Toolbar,
   Typography,
   Button,
-  IconButton,
+  IconButton
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 
-import Derecha from './Components/derecha'
+import Izquierda from "./Components/izquierda";
+import Derecha from "./Components/derecha";
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
+    flexGrow: 1
   },
   menuButton: {
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(2)
   },
   title: {
-    flexGrow: 1,
-  },
+    flexGrow: 1
+  }
 }));
 
 function App() {
@@ -82,9 +83,10 @@ function App() {
             border={1}
             borderColor="green"
           >
-            <Typography variant="h3" display="block" gutterBottom>
+            <Izquierda />
+            {/* <Typography variant="h3" display="block" gutterBottom>
               Seccion Izq
-            </Typography>
+            </Typography> */}
           </Box>
           <Box
             sm={6}
