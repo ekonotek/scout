@@ -1,6 +1,7 @@
 import React from "react";
 import {
   Avatar,
+  Box,
   Button,
   ListItem,
   Divider,
@@ -18,6 +19,8 @@ export default function RoleListItem(props) {
   
   return (
     <ListItem alignItems="flex-start" dense="true">
+    <Box>
+
       <ListItemAvatar>
         <Avatar alt="Remy Sharp" src={urlFile} />
       </ListItemAvatar>
@@ -27,6 +30,7 @@ export default function RoleListItem(props) {
         // secondary={}
         />
       <Button size="small" variant="contained" color="secondary" >Learn More</Button>
+    </Box>
     </ListItem>
   );
 }
