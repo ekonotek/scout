@@ -29,7 +29,8 @@ export default function RoleListItem(props) {
         primary={member.role}
         // secondary={}
         />
-      <Button size="small" variant="contained" color="secondary" >Learn More</Button>
+      <Button size="small" variant="contained" 
+              onClick={ () => alert(`you clicked: ${member.role}`)} color="secondary" >Learn More</Button>
     </Box>
     </ListItem>
   );

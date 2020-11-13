@@ -1,4 +1,11 @@
 import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 // import logo from "./logo.svg";
 // import "./App.css";
 // import { Box } from "@material-ui/core";
@@ -39,7 +46,7 @@ function App() {
 
     //   <footer>ABOUT | EVENTS</footer>
     // </div>
-    <React.Fragment>
+    <Router>
       <CssBaseline />
       <Container fixed>
         <Typography
@@ -64,71 +71,72 @@ function App() {
             </Toolbar>
           </AppBar>
         </Typography>
-        <Box
-          display="flex"
-          // flexDirection="row"
-          flexDirection="row"
-          p={0}
-          m={0}
-          bgcolor="transparent"
-          // color="white"
-          sm={12}
-        >
-          <Box
-            sm={6}
-            p={1}
-            mt={0}
-            style={{ width: "100%", minHeight: "40rem" }}
-            bgcolor="transparent"
-            border={1}
-            borderColor="green"
-          >
-            <Izquierda />
-            {/* <Typography variant="h3" display="block" gutterBottom>
-              Seccion Izq
-            </Typography> */}
-          </Box>
-          <Box
-            sm={6}
-            p={1}
-            mt={0}
-            style={{ width: "100%" }}
-            bgcolor="transparent"
-            border={1}
-            borderColor="green"
-          >
-            <Derecha />
-          </Box>
-        </Box>
-        <Box
-          display="flex"
-          // flexDirection="row"
-          flexDirection="column"
-          p={0}
-          m={0}
-          bgcolor="white"
-          color="white"
-          sm={12}
-        >
-          <Box sm={12} p={1} mt={0} style={{ width: "100%" }} bgcolor="#ef744c">
-            <Typography variant="h3" display="block" gutterBottom>
-              Primer Seccion
-            </Typography>
-          </Box>
-          <Box p={1} mt={0} style={{ width: "100%" }} bgcolor="#cf5636">
-            <Typography variant="caption" display="block" gutterBottom>
-              Segunda Seccion
-            </Typography>
-          </Box>
-          <Box p={1} mt={"3px"} style={{ width: "100%" }} bgcolor="#4f4947">
-            <Typography variant="caption" display="block" gutterBottom>
-              Tercer Seccion
-            </Typography>
-          </Box>
-        </Box>
+        <div>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/dashboard">Dashboard</Link>
+          </li>
+        </ul>
+
+        <hr />
+
+        {/*
+          A <Switch> looks through all its children <Route>
+          elements and renders the first one whose path
+          matches the current URL. Use a <Switch> any time
+          you have multiple routes, but you want only one
+          of them to render at a time
+        */}
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/dashboard">
+            <Dashboard />
+          </Route>
+        </Switch>
+      </div>
+
       </Container>
-    </React.Fragment>
+    </Router>
   );
 }
+
+// You can think of these components as "pages"
+// in your app.
+
+function Home() {
+  return (
+    <div>
+      <h2>Home</h2>
+    </div>
+  );
+}
+
+function About() {
+  return (
+    <div>
+      <h2>About</h2>
+    </div>
+  );
+}
+
+function Dashboard() {
+  return (
+    <div>
+      <h2>Dashboard</h2>
+    </div>
+  );
+}
+
 
 export default App;

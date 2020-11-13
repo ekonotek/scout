@@ -21,7 +21,7 @@ return(
 {/* <Box> */}
 <RoleList memberRoles={memberRoles} />
 {/* </Box> */}
-<Box align="center" border={1}>
+<Box align="center" >
   <Button size="small" variant="contained" 
           color="secondary" >
             Membership Details

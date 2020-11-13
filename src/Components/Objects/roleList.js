@@ -18,7 +18,7 @@ export default function RoleList(props) {
 
 return(
   // <pre> ListItem-List memberRoles: {JSON.stringify(memberRoles,null,2)}</pre>
-<Box border={1}>
+<Box>
       <Typography variant="h6" align="center">
           Create Your Profile
       </Typography>
