@@ -18,14 +18,14 @@ export default function RoleListItem(props) {
   const urlFile = "https://zl3yo.csb.app" + "/images/account.svg";
   
   return (
-    <ListItem alignItems="flex-start" dense="true">
+    <ListItem alignItems="flex-start" >
     <Box>
 
       <ListItemAvatar>
         <Avatar alt="Remy Sharp" src={urlFile} />
       </ListItemAvatar>
       <ListItemText
-        disableTypography={true}
+        // disableTypography={true}
         primary={member.role}
         // secondary={}
         />

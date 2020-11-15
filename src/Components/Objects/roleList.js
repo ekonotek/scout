@@ -10,9 +10,20 @@ import {
   Typography
 } from "@material-ui/core";
 // import ImageTemplate from "../nav/ImageTemplate";
+import { makeStyles } from "@material-ui/core/styles";
+
 import RoleListItem from './roleListItem'
 
+const useStyles = makeStyles((theme) => ({
+  container: {
+    display: "flex",
+    flexWrap: "wrap",
+    flexDirection: "row",
+  }
+})) 
+
 export default function RoleList(props) {
+  const classes = useStyles();
 
   const { memberRoles } = props
 
@@ -24,9 +35,10 @@ return(
       </Typography>
   
         <List 
-              // display="flex" 
-              // flexWrap="wrap" 
-              // justifyContent="flex-start"
+              display="flex" 
+flexDirection="row"
+              flexWrap="wrap" 
+              justifyContent="flex-start"
         >
           {memberRoles &&
             memberRoles.data.map((member, i) => (

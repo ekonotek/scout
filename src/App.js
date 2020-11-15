@@ -15,9 +15,11 @@ import { makeStyles } from "@material-ui/core/styles";
 
 import {
   AppBar,
-  Badge,
+  // Badge,
   Box,
-  List,
+  // List,
+MenuList,
+MenuItem,
   Toolbar,
   Typography,
   Button,
@@ -27,7 +29,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 
 import Home from './Components/Paginas/Home'
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles( (theme) => ({
   root: {
     flexGrow: 1
   },
@@ -114,19 +116,17 @@ function App() {
             </Typography>
           </Box>
           <Box p={1} mt={"3px"} style={{ width: "100%" }} bgcolor="#4f4947">
-            <Typography variant="caption" display="block" gutterBottom>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/about">About</Link>
-              </li>
-              <li>
-                <Link to="/dashboard">Dashboard</Link>
-              </li>
-            </ul>
-            </Typography>
+          <MenuList style={{ display: "flex" }}>
+              <MenuItem component={Link} to="/">
+                Home
+              </MenuItem>
+              <MenuItem component={Link} to="/about">
+                About
+              </MenuItem>
+              <MenuItem component={Link} to="/dashboard">
+                Dashboard
+              </MenuItem>
+            </MenuList>
           </Box>
         </Box>
       </Container>
