@@ -2,7 +2,7 @@ import React from "react";
 import {
   Avatar,
   Box,
-Button,
+  Button,
   ListItem,
   Divider,
   ListItemText,
@@ -10,9 +10,9 @@ Button,
   Typography
 } from "@material-ui/core";
 // import ImageTemplate from "../nav/ImageTemplate";
-import memberRoles from '../Data/memberRoles'
+import memberRoles from '../../Data/memberRoles'
 import RoleList from './roleList'
-export default function RoleListItem(props) {
+export default function Derecha(props) {
 
 return(
 <Box container>

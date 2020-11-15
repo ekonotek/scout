@@ -1,3 +1,37 @@
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import {
+  AppBar,
+  Badge,
+  Box,
+  List,
+  Toolbar,
+  Typography,
+  Button,
+  IconButton
+} from "@material-ui/core";
+
+import Izquierda from "../Objects/izquierda";
+import Derecha from "../Objects/derecha";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1
+  },
+  menuButton: {
+    marginRight: theme.spacing(2)
+  },
+  title: {
+    flexGrow: 1
+  }
+}));
+
+
+const Home = () => {
+  const classes = useStyles(useStyles);
+  return (
+<React.Fragment>
+
 <Box
 display="flex"
 // flexDirection="row"
@@ -34,29 +68,10 @@ sm={12}
   <Derecha />
 </Box>
 </Box>
-<Box
-display="flex"
-// flexDirection="row"
-flexDirection="column"
-p={0}
-m={0}
-bgcolor="white"
-color="white"
-sm={12}
->
-<Box sm={12} p={1} mt={0} style={{ width: "100%" }} bgcolor="#ef744c">
-  <Typography variant="h3" display="block" gutterBottom>
-    Primer Seccion
-  </Typography>
-</Box>
-<Box p={1} mt={0} style={{ width: "100%" }} bgcolor="#cf5636">
-  <Typography variant="caption" display="block" gutterBottom>
-    Segunda Seccion
-  </Typography>
-</Box>
-<Box p={1} mt={"3px"} style={{ width: "100%" }} bgcolor="#4f4947">
-  <Typography variant="caption" display="block" gutterBottom>
-    Tercer Seccion
-  </Typography>
-</Box>
-</Box>
+
+</React.Fragment>
+  )
+
+}
+
+export default Home

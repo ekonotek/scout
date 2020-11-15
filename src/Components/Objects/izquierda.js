@@ -19,7 +19,7 @@ const useStyles = makeStyles({
   }
 });
 
-export default function ImgMediaCard() {
+export default function Izquierda() {
   const classes = useStyles();
 
   return (

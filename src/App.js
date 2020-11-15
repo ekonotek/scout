@@ -12,6 +12,7 @@ import {
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
+
 import {
   AppBar,
   Badge,
@@ -24,8 +25,8 @@ import {
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 
-import Izquierda from "./Components/izquierda";
-import Derecha from "./Components/derecha";
+import Home from './Components/Paginas/Home'
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1
@@ -72,19 +73,6 @@ function App() {
           </AppBar>
         </Typography>
         <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/dashboard">Dashboard</Link>
-          </li>
-        </ul>
-
-        <hr />
 
         {/*
           A <Switch> looks through all its children <Route>
@@ -105,7 +93,42 @@ function App() {
           </Route>
         </Switch>
       </div>
-
+      <Box
+          display="flex"
+          // flexDirection="row"
+          flexDirection="column"
+          p={0}
+          m={0}
+          bgcolor="white"
+          color="white"
+          sm={12}
+          >
+          <Box sm={12} p={1} mt={0} style={{ width: "100%" }} bgcolor="#ef744c">
+            <Typography variant="h3" display="block" gutterBottom>
+              Primer Seccion
+            </Typography>
+          </Box>
+          <Box p={1} mt={0} style={{ width: "100%" }} bgcolor="#cf5636">
+            <Typography variant="caption" display="block" gutterBottom>
+              Segunda Seccion
+            </Typography>
+          </Box>
+          <Box p={1} mt={"3px"} style={{ width: "100%" }} bgcolor="#4f4947">
+            <Typography variant="caption" display="block" gutterBottom>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/about">About</Link>
+              </li>
+              <li>
+                <Link to="/dashboard">Dashboard</Link>
+              </li>
+            </ul>
+            </Typography>
+          </Box>
+        </Box>
       </Container>
     </Router>
   );
@@ -114,13 +137,13 @@ function App() {
 // You can think of these components as "pages"
 // in your app.
 
-function Home() {
-  return (
-    <div>
-      <h2>Home</h2>
-    </div>
-  );
-}
+// function Home() {
+//   return (
+//     <div>
+//       <h2>Home</h2>
+//     </div>
+//   );
+// }
 
 function About() {
   return (
