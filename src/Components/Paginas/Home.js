@@ -43,13 +43,13 @@ bgcolor="transparent"
 sm={12}
 >
 <Box
-  sm={6}
+  sm={8}
   p={1}
   mt={0}
-  style={{ width: "100%", minHeight: "40rem" }}
+  style={{ width: "65%", minHeight: "40rem" }}
   bgcolor="transparent"
-  border={1}
-  borderColor="green"
+  // border={1}
+  // borderColor="green"
 >
   <Izquierda />
   {/* <Typography variant="h3" display="block" gutterBottom>
@@ -57,13 +57,13 @@ sm={12}
   </Typography> */}
 </Box>
 <Box
-  sm={6}
+  sm={4}
   p={1}
   mt={0}
-  style={{ width: "100%" }}
+  style={{ width: "35%" }}
   bgcolor="transparent"
-  border={1}
-  borderColor="green"
+  // border={1}
+  // borderColor="green"
 >
   <Derecha />
 </Box>
