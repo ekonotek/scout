@@ -1,35 +1,29 @@
 import React from "react";
 import {
-  Avatar,
   Box,
   Button,
-  ListItem,
-  Divider,
-  ListItemText,
-  ListItemAvatar,
-  Typography
+  Paper,
 } from "@material-ui/core";
 // import ImageTemplate from "../nav/ImageTemplate";
 import memberRoles from '../../Data/memberRoles'
+import OpenFreeAccount from './openFreeAccount'
 import RoleList from './roleList'
+
 export default function Derecha(props) {
 
 return(
-<Box container>
-{/* <pre>memberRoles: {JSON.stringify(memberRoles,null,2)}</pre> */}
-
-{/* <Box> */}
-<RoleList memberRoles={memberRoles} />
-{/* </Box> */}
-<Box align="center" >
-  <Button size="small" variant="contained" 
-          color="secondary" >
-            Membership Details
-  </Button>
-
-</Box>
-
-</Box>
+<Paper>
+  <RoleList memberRoles={memberRoles} />
+  <Box align="center" >
+    <hr/>
+      <Button size="small" variant="contained" 
+              color="secondary" >
+                Membership Details
+      </Button>
+    <hr/>
+  </Box>
+  <OpenFreeAccount />
+</Paper>
 
 )
 

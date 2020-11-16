@@ -34,24 +34,24 @@ return(
           Create Your Profile
       </Typography>
   
-        <List 
-              display="flex" 
-flexDirection="row"
-              flexWrap="wrap" 
-              justifyContent="flex-start"
-        >
-          {memberRoles &&
-            memberRoles.data.map((member, i) => (
-              
-              // <pre>{member.role}</pre>
-              <RoleListItem
-              // classes={classes}
-              key={i}
-              member={member}
-              />
-              ))
-            }
-        </List>
+      <List style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", overflow: "wrap" }}
+  
+  // flexDirection="row"
+            // flexWrap={true} 
+            // justifyContent="flex-start"
+      >
+        {memberRoles &&
+          memberRoles.data.map((member, i) => (
+            
+            // <pre>{member.role}</pre>
+            <RoleListItem
+            // classes={classes}
+            key={i}
+            member={member}
+            />
+            ))
+          }
+      </List>
 </Box>
       )
 }
