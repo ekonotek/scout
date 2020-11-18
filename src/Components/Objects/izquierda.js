@@ -15,11 +15,11 @@ import IconButton from "@material-ui/core/IconButton";
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345
+    // maxWidth: 345
   }
 });
 
-export default function ImgMediaCard() {
+export default function Izquierda() {
   const classes = useStyles();
 
   return (
