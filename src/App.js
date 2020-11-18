@@ -34,7 +34,7 @@ MenuItem,
 import MenuIcon from "@material-ui/icons/Menu";
 
 import Home from './Components/Paginas/Home'
-
+import Appbar from './Components/Objects/appbar'
 const useStyles = makeStyles( (theme) => ({
   root: {
     flexGrow: 1
@@ -108,22 +108,7 @@ function App() {
           // style={{ backgroundColor: "#f7f7f7", height: "100vh" }}
           style={{ backgroundColor: "#e1e2e1", height: "10vh" }}
         >
-          <AppBar position="static" style={{ backgroundColor: "#cf5636" }}>
-            <Toolbar>
-              <IconButton
-                edge="start"
-                className={classes.menuButton}
-                color="inherit"
-                aria-label="menu"
-              >
-                <MenuIcon />
-              </IconButton>
-              <Typography variant="h6" className={classes.title}>
-                ART SCOUTERS
-              </Typography>
-              <Button color="inherit">Login</Button>
-            </Toolbar>
-          </AppBar>
+<Appbar />
         </Typography>
         <div>
 
