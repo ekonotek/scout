@@ -4,35 +4,36 @@ import React from "react";
 // import { Box } from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Container from "@material-ui/core/Container";
-import { makeStyles } from "@material-ui/core/styles";
+//import { makeStyles } from "@material-ui/core/styles";
 import {
-  AppBar,
-  Badge,
+  //AppBar,
+  //Badge,
   Box,
-  List,
-  Toolbar,
-  Typography,
-  Button,
-  IconButton
+  //List,
+  //Toolbar,
+  Typography
+  //Button,
+  //IconButton
 } from "@material-ui/core";
-import MenuIcon from "@material-ui/icons/Menu";
+//import MenuIcon from "@material-ui/icons/Menu";
 
+import Appbar from "./Components/appbar";
 import Izquierda from "./Components/izquierda";
 import Derecha from "./Components/derecha";
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1
-  },
-  menuButton: {
-    marginRight: theme.spacing(2)
-  },
-  title: {
-    flexGrow: 1
-  }
-}));
+// const useStyles = makeStyles((theme) => ({
+//   root: {
+//     flexGrow: 1
+//   },
+//   menuButton: {
+//     marginRight: theme.spacing(2)
+//   },
+//   title: {
+//     flexGrow: 1
+//   }
+// }));
 
 function App() {
-  const classes = useStyles(useStyles);
+  //const classes = useStyles(useStyles);
   return (
     // <div className="App">
     //   <header className="App-header">ART SCOUTERS</header>
@@ -47,7 +48,8 @@ function App() {
           // style={{ backgroundColor: "#f7f7f7", height: "100vh" }}
           style={{ backgroundColor: "#e1e2e1", height: "10vh" }}
         >
-          <AppBar position="static" style={{ backgroundColor: "#cf5636" }}>
+          <Appbar />
+          {/* <AppBar position="static" style={{ backgroundColor: "#cf5636" }}>
             <Toolbar>
               <IconButton
                 edge="start"
@@ -62,7 +64,7 @@ function App() {
               </Typography>
               <Button color="inherit">Login</Button>
             </Toolbar>
-          </AppBar>
+          </AppBar> */}
         </Typography>
         <Box
           display="flex"
