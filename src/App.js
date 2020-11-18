@@ -10,6 +10,12 @@ import {
 // import "./App.css";
 // import { Box } from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
+import { MuiThemeProvider } from "@material-ui/core/styles";
+import { createMuiTheme } from "@material-ui/core";
+import purple from "@material-ui/core/colors/purple";
+import green from "@material-ui/core/colors/green";
+import "typeface-roboto";
+
 import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -41,6 +47,49 @@ const useStyles = makeStyles( (theme) => ({
   }
 }));
 
+// const defaultTheme = createMuiTheme({
+//   cursor: {
+//     cursor: "pointer",
+//   },
+//   typography: {
+//     useNextVariants: true,
+//   },
+//   spacing: 4,
+// });
+
+// const purpleTheme = createMuiTheme({
+//   palette: {
+//     primary: purple,
+//     secondary: green,
+//   },
+//   typography: {
+//     useNextVariants: true,
+//   },
+// });
+
+// const fontTheme = createMuiTheme({
+//   palette: {
+//     secondary: purple,
+//     primary: green,
+//   },
+//   typography: {
+//     fontFamily: ["Courier", "Helvetica"],
+//     useNextVariants: true,
+//   },
+// });
+
+const artScoutTheme = createMuiTheme({
+  palette: {
+    secondary: purple,
+    primary: green,
+  },
+  typography: {
+    fontFamily: ["Courier", "Helvetica"],
+    useNextVariants: true,
+  },
+});
+
+
 function App() {
   const classes = useStyles(useStyles);
   return (
@@ -49,6 +98,8 @@ function App() {
 
     //   <footer>ABOUT | EVENTS</footer>
     // </div>
+     <MuiThemeProvider theme={artScoutTheme}>
+
     <Router>
       <CssBaseline />
       <Container fixed>
@@ -131,6 +182,7 @@ function App() {
         </Box>
       </Container>
     </Router>
+</MuiThemeProvider>
   );
 }
 
