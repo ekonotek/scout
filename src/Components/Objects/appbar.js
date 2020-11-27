@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 // import logo from "./logo.svg";
 // import "./App.css";
@@ -24,8 +19,8 @@ import {
   // Badge,
   Box,
   // List,
-MenuList,
-MenuItem,
+  MenuList,
+  MenuItem,
   Toolbar,
   Typography,
   Button,
@@ -89,24 +84,24 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-
 export default function SearchAppbarr() {
-const classes = useStyles();
-return(
-<AppBar position="static" style={{ backgroundColor: "#cf5636" }}>
-<Toolbar>
-  <IconButton
-    edge="start"
-    className={classes.menuButton}
-    color="inherit"
-    aria-label="menu"
-  >
-    <MenuIcon />
-  </IconButton>
-  <Typography variant="h6" className={classes.title}>
-    ART SCOUTERS
-  </Typography>
-  <Button color="inherit">Login</Button>
-</Toolbar>
-</AppBar>
-)}
+  const classes = useStyles();
+  return (
+    <AppBar position="static" style={{ backgroundColor: "#cf5636" }}>
+      <Toolbar>
+        <IconButton
+          edge="start"
+          className={classes.menuButton}
+          color="inherit"
+          aria-label="menu"
+        >
+          <MenuIcon />
+        </IconButton>
+        <Typography variant="h6" className={classes.title}>
+          ART SCOUTERS
+        </Typography>
+        <Button color="inherit">Login</Button>
+      </Toolbar>
+    </AppBar>
+  );
+}
