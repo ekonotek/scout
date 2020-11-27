@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 // import logo from "./logo.svg";
 // import "./App.css";
@@ -19,23 +14,11 @@ import "typeface-roboto";
 import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
 
-import {
-  AppBar,
-  // Badge,
-  Box,
-  // List,
-MenuList,
-MenuItem,
-  Toolbar,
-  Typography,
-  Button,
-  IconButton
-} from "@material-ui/core";
-import MenuIcon from "@material-ui/icons/Menu";
+import { Box, MenuList, MenuItem, Typography } from "@material-ui/core";
 
-import Home from './Components/Paginas/Home'
-import Appbar from './Components/Objects/appbar'
-const useStyles = makeStyles( (theme) => ({
+import Home from "./Components/Paginas/Home";
+import Appbar from "./Components/Objects/appbar";
+const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1
   },
@@ -81,14 +64,13 @@ const useStyles = makeStyles( (theme) => ({
 const artScoutTheme = createMuiTheme({
   palette: {
     secondary: purple,
-    primary: green,
+    primary: green
   },
   typography: {
     fontFamily: ["Courier", "Helvetica"],
-    useNextVariants: true,
-  },
+    useNextVariants: true
+  }
 });
-
 
 function App() {
   const classes = useStyles(useStyles);
@@ -98,76 +80,80 @@ function App() {
 
     //   <footer>ABOUT | EVENTS</footer>
     // </div>
-     <MuiThemeProvider theme={artScoutTheme}>
-
-    <Router>
-      <CssBaseline />
-      <Container fixed>
-        <Typography
-          component="div"
-          // style={{ backgroundColor: "#f7f7f7", height: "100vh" }}
-          style={{ backgroundColor: "#e1e2e1", height: "10vh" }}
-        >
-<Appbar />
-        </Typography>
-        <div>
-
-        {/*
+    <MuiThemeProvider theme={artScoutTheme}>
+      <Router>
+        <CssBaseline />
+        <Container fixed>
+          <Typography
+            component="div"
+            // style={{ backgroundColor: "#f7f7f7", height: "100vh" }}
+            style={{ backgroundColor: "#e1e2e1", height: "10vh" }}
+          >
+            <Appbar />
+          </Typography>
+          <div>
+            {/*
           A <Switch> looks through all its children <Route>
           elements and renders the first one whose path
           matches the current URL. Use a <Switch> any time
           you have multiple routes, but you want only one
           of them to render at a time
         */}
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/dashboard">
-            <Dashboard />
-          </Route>
-        </Switch>
-      </div>
-      <Box
-          display="flex"
-          // flexDirection="row"
-          flexDirection="column"
-          p={0}
-          m={0}
-          bgcolor="white"
-          color="white"
-          sm={12}
+            <Switch>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route path="/about">
+                <About />
+              </Route>
+              <Route path="/dashboard">
+                <Dashboard />
+              </Route>
+            </Switch>
+          </div>
+          <Box
+            display="flex"
+            // flexDirection="row"
+            flexDirection="column"
+            p={0}
+            m={0}
+            bgcolor="white"
+            color="white"
+            sm={12}
           >
-          <Box sm={12} p={1} mt={0} style={{ width: "100%" }} bgcolor="#ef744c">
-            <Typography variant="h3" display="block" gutterBottom>
-              Primer Seccion
-            </Typography>
+            <Box
+              sm={12}
+              p={1}
+              mt={0}
+              style={{ width: "100%" }}
+              bgcolor="#ef744c"
+            >
+              <Typography variant="h3" display="block" gutterBottom>
+                Primer Seccion
+              </Typography>
+            </Box>
+            <Box p={1} mt={0} style={{ width: "100%" }} bgcolor="#cf5636">
+              <Typography variant="caption" display="block" gutterBottom>
+                Segunda Seccion
+              </Typography>
+            </Box>
+            <Box p={1} mt={"3px"} style={{ width: "100%" }} bgcolor="#4f4947">
+              <MenuList style={{ display: "flex" }}>
+                <MenuItem component={Link} to="/">
+                  Home
+                </MenuItem>
+                <MenuItem component={Link} to="/about">
+                  About
+                </MenuItem>
+                <MenuItem component={Link} to="/dashboard">
+                  Dashboard
+                </MenuItem>
+              </MenuList>
+            </Box>
           </Box>
-          <Box p={1} mt={0} style={{ width: "100%" }} bgcolor="#cf5636">
-            <Typography variant="caption" display="block" gutterBottom>
-              Segunda Seccion
-            </Typography>
-          </Box>
-          <Box p={1} mt={"3px"} style={{ width: "100%" }} bgcolor="#4f4947">
-          <MenuList style={{ display: "flex" }}>
-              <MenuItem component={Link} to="/">
-                Home
-              </MenuItem>
-              <MenuItem component={Link} to="/about">
-                About
-              </MenuItem>
-              <MenuItem component={Link} to="/dashboard">
-                Dashboard
-              </MenuItem>
-            </MenuList>
-          </Box>
-        </Box>
-      </Container>
-    </Router>
-</MuiThemeProvider>
+        </Container>
+      </Router>
+    </MuiThemeProvider>
   );
 }
 
@@ -197,6 +183,5 @@ function Dashboard() {
     </div>
   );
 }
-
 
 export default App;
