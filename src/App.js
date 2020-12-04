@@ -17,17 +17,18 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Box, MenuList, MenuItem, Typography } from "@material-ui/core";
 
 import Home from "./Components/Paginas/Home";
+import Test from "./Components/Paginas/Base3x3";
 import Appbar from "./Components/Objects/appbar";
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   menuButton: {
-    marginRight: theme.spacing(2)
+    marginRight: theme.spacing(2),
   },
   title: {
-    flexGrow: 1
-  }
+    flexGrow: 1,
+  },
 }));
 
 // const defaultTheme = createMuiTheme({
@@ -64,12 +65,12 @@ const useStyles = makeStyles((theme) => ({
 const artScoutTheme = createMuiTheme({
   palette: {
     secondary: purple,
-    primary: green
+    primary: green,
   },
   typography: {
     fontFamily: ["Courier", "Helvetica"],
-    useNextVariants: true
-  }
+    useNextVariants: true,
+  },
 });
 
 function App() {
@@ -103,6 +104,9 @@ function App() {
               <Route exact path="/">
                 <Home />
               </Route>
+              <Route exact path="/test">
+                <Test />
+              </Route>
               <Route path="/about">
                 <About />
               </Route>
@@ -129,18 +133,21 @@ function App() {
               bgcolor="#ef744c"
             >
               <Typography variant="h3" display="block" gutterBottom>
-                Primer Seccion
+                Footer 1
               </Typography>
             </Box>
             <Box p={1} mt={0} style={{ width: "100%" }} bgcolor="#cf5636">
               <Typography variant="caption" display="block" gutterBottom>
-                Segunda Seccion
+                Footer 2
               </Typography>
             </Box>
             <Box p={1} mt={"3px"} style={{ width: "100%" }} bgcolor="#4f4947">
               <MenuList style={{ display: "flex" }}>
                 <MenuItem component={Link} to="/">
                   Home
+                </MenuItem>
+                <MenuItem component={Link} to="test">
+                  Test
                 </MenuItem>
                 <MenuItem component={Link} to="/about">
                   About

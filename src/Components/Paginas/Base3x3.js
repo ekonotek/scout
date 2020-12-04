@@ -1,0 +1,75 @@
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import {
+  AppBar,
+  Badge,
+  Box,
+  List,
+  Toolbar,
+  Typography,
+  Button,
+  IconButton,
+} from "@material-ui/core";
+
+import Izquierda from "../Objects/izquierda";
+import Derecha from "../Objects/derecha";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  title: {
+    flexGrow: 1,
+  },
+}));
+
+const ColBox = (props) => {
+  return (
+    <Box
+      id={`row${props.row}`}
+      m={1}
+      css={{ width: "33.3%" }}
+      justifyContent="center"
+    >
+      {[1, 2, 3].map((i) => {
+        return (
+          <Box key={i}>
+            <Typography
+              variant="h4"
+              display="block"
+              gutterBottom
+              align="center"
+            >
+              {`Seccion - ${i}  -  ${props.row}`}
+            </Typography>
+          </Box>
+        );
+      })}
+    </Box>
+  );
+};
+
+const Test = () => {
+  const classes = useStyles(useStyles);
+  return (
+    <Box
+      display="flex"
+      flexDirection="row"
+      justifyContent="flex-start"
+      p={0}
+      m={0}
+      bgcolor="transparent"
+      // color="white"
+      sm={12}
+    >
+      {[1, 2, 3].map((i) => {
+        return <ColBox key={i} row={i} />;
+      })}
+    </Box>
+  );
+};
+
+export default Test;
