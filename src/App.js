@@ -17,7 +17,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Box, MenuList, MenuItem, Typography } from "@material-ui/core";
 
 import Home from "./Components/Paginas/Home";
-import Test from "./Components/Paginas/Base3x3";
+import Routes from "./Components/Routes/Routes";
 import Appbar from "./Components/Objects/appbar";
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -104,6 +104,7 @@ function App() {
               <Route exact path="/">
                 <Home />
               </Route>
+              <Routes />
               <Route path="/about">
                 <About />
               </Route>
