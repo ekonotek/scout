@@ -27,23 +27,24 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const ColBox = (props) => {
+const { col } = props
   return (
     <Box
-      id={`row${props.row}`}
+      id={`row${col}`}
       m={1}
       css={{ width: "33.3%" }}
       justifyContent="center"
     >
-      {[1, 2, 3].map((i) => {
+      {[1, 2, 3].map((row) => {
         return (
-          <Box key={i}>
+          <Box key={row}>
             <Typography
-              variant="h4"
+              variant="body2"
               display="block"
               gutterBottom
               align="center"
             >
-              {`Seccion - ${i}  -  ${props.row}`}
+              {`Seccion - ${row}  -  ${col}`}
             </Typography>
           </Box>
         );
@@ -65,8 +66,8 @@ const Test = () => {
       // color="white"
       sm={12}
     >
-      {[1, 2, 3].map((i) => {
-        return <ColBox key={i} row={i} />;
+      {[1, 2, 3].map((col) => {
+        return <ColBox key={col} col={col} />;
       })}
     </Box>
   );
