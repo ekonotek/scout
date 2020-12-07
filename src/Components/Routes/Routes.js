@@ -35,7 +35,7 @@ const Routes = () => {
 {pagesJSON.data.map( page => {
 return (
       <Route exact path={`/${page.PageName}`}>
-        <Base3x3 />
+        <Base3x3 page={page} />
       </Route>
       )
     })}

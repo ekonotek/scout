@@ -104,13 +104,13 @@ function App() {
               <Route exact path="/">
                 <Home />
               </Route>
-              <Routes />
               <Route path="/about">
                 <About />
               </Route>
               <Route path="/dashboard">
                 <Dashboard />
               </Route>
+              <Routes />
             </Switch>
           </div>
           <Box

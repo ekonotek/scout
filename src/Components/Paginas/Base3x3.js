@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const ColBox = (props) => {
-const { col } = props
+const { col, nombre } = props
   return (
     <Box
       id={`row${col}`}
@@ -43,7 +43,7 @@ const { col } = props
               display="block"
               gutterBottom
               align="center"
-            >
+              >
               {`Seccion - ${row}  -  ${col}`}
             </Typography>
           </Box>
@@ -53,19 +53,21 @@ const { col } = props
   );
 };
 
-const Test = () => {
+const Base3x3 = (props) => {
   const classes = useStyles(useStyles);
+const { page } = props
   return (
     <Box
-      display="flex"
-      flexDirection="row"
-      justifyContent="flex-start"
-      p={0}
-      m={0}
-      bgcolor="transparent"
-      // color="white"
-      sm={12}
+    display="flex"
+    flexDirection="row"
+    justifyContent="flex-start"
+    p={0}
+    m={0}
+    bgcolor="transparent"
+    // color="white"
+    sm={12}
     >
+      {/* <pre>-{ JSON.stringify( page, null, 2)}-</pre> */}
       {[1, 2, 3].map((col) => {
         return <ColBox key={col} col={col} />;
       })}
@@ -73,4 +75,4 @@ const Test = () => {
   );
 };
 
-export default Test;
+export default Base3x3;
