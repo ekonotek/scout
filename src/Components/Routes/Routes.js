@@ -13,7 +13,7 @@ import {
 } from "@material-ui/core";
 
 import Base3x3 from "../Paginas/Base3x3";
-
+import pagesJSON from "../../Data/pagesJSON"
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1
@@ -31,9 +31,14 @@ const Routes = () => {
   const classes = useStyles(useStyles);
   return (
     <React.Fragment>
-      <Route exact path="/test">
+
+{pagesJSON.data.map( page => {
+return (
+      <Route exact path={`/${page.PageName}`}>
         <Base3x3 />
       </Route>
+      )
+    })}
     </React.Fragment>
   )
 
