@@ -1,11 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { Drawer, Box, MenuList, MenuItem} from '@material-ui/core';
+import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import AppBar from '@material-ui/core/AppBar';
+import { AppBar, Box, Container, MenuList, MenuItem } from '@material-ui/core';
 import Toolbar from '@material-ui/core/Toolbar';
 import List from '@material-ui/core/List';
 import Typography from '@material-ui/core/Typography';
@@ -20,6 +19,9 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 
+import Home from "./Components/Paginas/Home"
+import Routes from "./Components/Routes/Routes"
+
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -27,7 +29,6 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
   },
   appBar: {
-    paddingRight: theme.spacing(3),
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
@@ -76,10 +77,8 @@ const useStyles = makeStyles((theme) => ({
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen,
     }),
+    marginLeft: 0,
   },
-  main: {
-    padding: 24
-  }
 }));
 
 export default function PersistentDrawerLeft() {
@@ -96,7 +95,6 @@ export default function PersistentDrawerLeft() {
   };
 
   return (
-    <Router>
     <div className={classes.root}>
       <CssBaseline />
       <AppBar
@@ -116,7 +114,7 @@ export default function PersistentDrawerLeft() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            Art Scouters
+            Persistent drawer
           </Typography>
         </Toolbar>
       </AppBar>
@@ -159,7 +157,15 @@ export default function PersistentDrawerLeft() {
         })}
       >
         <div className={classes.drawerHeader} />
-        <div>
+        <Router>
+        <Container fixed>
+          <Typography
+            component="div"
+            // style={{ backgroundColor: "#f7f7f7", height: "100vh" }}
+            style={{ backgroundColor: "#e1e2e1", height: "10vh" }}
+          >
+          </Typography>
+          <div>
             {/*
           A <Switch> looks through all its children <Route>
           elements and renders the first one whose path
@@ -223,39 +229,17 @@ export default function PersistentDrawerLeft() {
               </MenuList>
             </Box>
           </Box>
+        </Container>
+      </Router>
       </main>
     </div>
-</Router>
   );
 }
-
-// You can think of these components as "pages"
-// in your app.
-
-function Home() {
-  return (
-    <div>
-      <h2>Home</h2>
-    </div>
-  );
-}
-
 
 function About() {
   return (
     <div>
       <h2>About</h2>
-        <Typography paragraph>
-          Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
-          facilisi etiam dignissim diam. Pulvinar elementum integer enim neque volutpat ac
-          tincidunt. Ornare suspendisse sed nisi lacus sed viverra tellus. Purus sit amet volutpat
-          consequat mauris. Elementum eu facilisis sed odio morbi. Euismod lacinia at quis risus sed
-          vulputate odio. Morbi tincidunt ornare massa eget egestas purus viverra accumsan in. In
-          hendrerit gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem et
-          tortor. Habitant morbi tristique senectus et. Adipiscing elit duis tristique sollicitudin
-          nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas
-          accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
-        </Typography>
     </div>
   );
 }
@@ -264,18 +248,6 @@ function Dashboard() {
   return (
     <div>
       <h2>Dashboard</h2>
-        <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
-          facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit
-          gravida rutrum quisque non tellus. Convallis convallis tellus id interdum velit laoreet id
-          donec ultrices. Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-          adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra nibh cras.
-          Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Mauris commodo quis
-          imperdiet massa tincidunt. Cras tincidunt lobortis feugiat vivamus at augue. At augue eget
-          arcu dictum varius duis at consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem
-          donec massa sapien faucibus et molestie ac.
-        </Typography>
     </div>
   );
 }
