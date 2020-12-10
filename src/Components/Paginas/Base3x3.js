@@ -26,31 +26,43 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const getRowsAndCols = (page,col) => {
+
+const ret = [['65%'],['35%'],[]]  //this is page 1 = Home
+
+return ret[col-1]
+// return col
+}
+
 const ColBox = (props) => {
-const { page, rowsArry } = props
-const col = 1
+const { page, col, rowsArry } = props
+// const col = 1
   return (
-    <Box
-      id={`row${col}`}
-      m={1}
-      css={{ width: "33.3%" }}
-      justifyContent="center"
-    >
-      {rowsArry.map( row => {
+    // <Box
+    //   id={`row${col}`}
+    //   m={1}
+    //   css={{ width: 'auto' }}
+    //   justifyContent="center"
+    //   border={1}
+    //   borderColor="blue"
+    //   >
+      rowsArry.map( row => {
         return (
-          <Box key={row}>
+          <Box key={row} css={{ width: row }} border={1}
+            borderColor="green">
             <Typography
               variant="body2"
               display="block"
               gutterBottom
               align="center"
               >
-              {`Seccion - ${row}  -  ${col}`}
+              {`Seccion - ${JSON.stringify(rowsArry,null,2)}  -  ${col}`}
+
             </Typography>
           </Box>
         );
-      })}
-    </Box>
+      })
+    // </Box>
   );
 };
 
@@ -64,26 +76,28 @@ const { page } = props
     display="flex"
     flexDirection="row"
     justifyContent="flex-start"
-    p={0}
+    p={1}
     m={0}
     bgcolor="transparent"
     // color="white"
     sm={12}
+    border={1}
+    borderColor="red"
+
     >
-      <pre>-{ JSON.stringify( page, null, 2)}-</pre>
       { [1,2,3].map( col => {
-        return <ColBox key={col} col={col} rowsArry={getRowsAndCols(page,col)} />;
-      })
+        
+        const rowsArray=getRowsAndCols(page,col)
+        return( 
+
+          <ColBox key={col} col={col} rowsArry={rowsArray} />
+
+        )
+        })
       }
     </Box>
   );
 };
 
-const getRowsAndCols = (page,col) => {
-
-const ret = [[1],[1],[]]  //this is page 1 = Home
-
-return ret[col]
-}
 
 export default Base3x3;

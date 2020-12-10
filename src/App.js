@@ -20,6 +20,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import Routes from './Components/Routes/Routes';
+// import Home from './Components/Paginas/Home'
 
 const drawerWidth = 240;
 
