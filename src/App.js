@@ -19,6 +19,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+import Routes from './Components/Routes/Routes';
 
 const drawerWidth = 240;
 
@@ -168,16 +169,16 @@ export default function PersistentDrawerLeft() {
           of them to render at a time
         */}
             <Switch>
-              <Route exact path="/">
+              {/* <Route exact path="/">
                 <Home />
-              </Route>
+              </Route> */}
               <Route path="/about">
                 <About />
               </Route>
               <Route path="/dashboard">
                 <Dashboard />
               </Route>
-              {/* <Routes /> */}
+              <Routes />
             </Switch>
           </div>
           <Box
@@ -232,13 +233,13 @@ export default function PersistentDrawerLeft() {
 // You can think of these components as "pages"
 // in your app.
 
-function Home() {
-  return (
-    <div>
-      <h2>Home</h2>
-    </div>
-  );
-}
+// function Home() {
+//   return (
+//     <div>
+//       <h2>Home</h2>
+//     </div>
+//   );
+// }
 
 
 function About() {

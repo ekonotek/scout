@@ -27,7 +27,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const ColBox = (props) => {
-const { col, nombre } = props
+const { page, rowsArry } = props
+const col = 1
   return (
     <Box
       id={`row${col}`}
@@ -35,7 +36,7 @@ const { col, nombre } = props
       css={{ width: "33.3%" }}
       justifyContent="center"
     >
-      {[1, 2, 3].map((row) => {
+      {rowsArry.map( row => {
         return (
           <Box key={row}>
             <Typography
@@ -55,7 +56,9 @@ const { col, nombre } = props
 
 const Base3x3 = (props) => {
   const classes = useStyles(useStyles);
+
 const { page } = props
+
   return (
     <Box
     display="flex"
@@ -67,12 +70,20 @@ const { page } = props
     // color="white"
     sm={12}
     >
-      {/* <pre>-{ JSON.stringify( page, null, 2)}-</pre> */}
-      {[1, 2, 3].map((col) => {
-        return <ColBox key={col} col={col} />;
-      })}
+      <pre>-{ JSON.stringify( page, null, 2)}-</pre>
+      { [1,2,3].map( col => {
+        return <ColBox key={col} col={col} rowsArry={getRowsAndCols(page,col)} />;
+      })
+      }
     </Box>
   );
 };
+
+const getRowsAndCols = (page,col) => {
+
+const ret = [[1],[1],[]]  //this is page 1 = Home
+
+return ret[col]
+}
 
 export default Base3x3;
