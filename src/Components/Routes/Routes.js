@@ -32,9 +32,11 @@ const Routes = () => {
   return (
     <React.Fragment>
 
-{pagesJSON.data.map( page => {
+{pagesJSON.data.map( (page,ndx) => {
+  console.log(JSON.stringify(page,null,2))
+  const lpath= page.UsePage === "" ? `/${page.PageName}` : `${page.UsePage}`
 return (
-      <Route exact path={`/${page.PageName}`}>
+      <Route key={ndx} exact path={lpath} >
         <Base3x3 page={page} />
       </Route>
       )

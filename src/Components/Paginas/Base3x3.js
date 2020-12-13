@@ -26,53 +26,78 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const getRowsAndCols = (page,col) => {
+
+const ret = [['65%'],['35%'],[]]  //this is page 1 = Home
+
+return ret[col-1]
+// return col
+}
+
 const ColBox = (props) => {
-const { col, nombre } = props
+const { page, col, rowsArry } = props
+// const col = 1
   return (
-    <Box
-      id={`row${col}`}
-      m={1}
-      css={{ width: "33.3%" }}
-      justifyContent="center"
-    >
-      {[1, 2, 3].map((row) => {
+    // <Box
+    //   id={`row${col}`}
+    //   m={1}
+    //   css={{ width: 'auto' }}
+    //   justifyContent="center"
+    //   border={1}
+    //   borderColor="blue"
+    //   >
+      rowsArry.map( row => {
         return (
-          <Box key={row}>
+          <Box key={row} css={{ width: row }} border={1}
+            borderColor="green">
             <Typography
               variant="body2"
               display="block"
               gutterBottom
               align="center"
               >
-              {`Seccion - ${row}  -  ${col}`}
+              {`Seccion - ${JSON.stringify(rowsArry,null,2)}  -  ${col}`}
+
             </Typography>
           </Box>
         );
-      })}
-    </Box>
+      })
+    // </Box>
   );
 };
 
 const Base3x3 = (props) => {
   const classes = useStyles(useStyles);
+
 const { page } = props
+
   return (
     <Box
     display="flex"
     flexDirection="row"
     justifyContent="flex-start"
-    p={0}
+    p={1}
     m={0}
     bgcolor="transparent"
     // color="white"
     sm={12}
+    border={1}
+    borderColor="red"
+
     >
-      {/* <pre>-{ JSON.stringify( page, null, 2)}-</pre> */}
-      {[1, 2, 3].map((col) => {
-        return <ColBox key={col} col={col} />;
-      })}
+      { [1,2,3].map( col => {
+        
+        const rowsArray=getRowsAndCols(page,col)
+        return( 
+
+          <ColBox key={col} col={col} rowsArry={rowsArray} />
+
+        )
+        })
+      }
     </Box>
   );
 };
+
 
 export default Base3x3;

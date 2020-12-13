@@ -4,16 +4,22 @@ module.exports = {
       "Name": "Artboard1",
       "Visibility": "Public",
       "PageName": "signUpLogin_1",
-      "UsePage": "",
+      "UsePage": "/",
       "Head1": "primary",
       "Head2": "",
       "Search": "",
       "Foot1": "primary-light",
       "Foot2": "primary",
       "Foot3": "secondary-dark",
-      "IzquierdaTop": "60%",
+      "IzquierdaTop": {
+        width: "65%",
+        components: ["Izquierda"] 
+        },
       "MedioTop": "",
-      "DerechaTop": "30%",
+      "DerechaTop": {
+        width: "35%",
+        components: ["Derecha"] 
+        },
       "IzquierdaMid": "",
       "DerechaMid": "",
       "IzquierdaBott": "",
