@@ -11,8 +11,7 @@ import {
   IconButton,
 } from "@material-ui/core";
 
-import Izquierda from "../Objects/izquierda";
-import Derecha from "../Objects/derecha";
+import MyComponent from "./MyComponent"; //For now all of our components will load there.
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -26,78 +25,70 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const getRowsAndCols = (page,col) => {
-
-const ret = [['65%'],['35%'],[]]  //this is page 1 = Home
-
-return ret[col-1]
-// return col
-}
-
 const ColBox = (props) => {
-const { page, col, rowsArry } = props
-// const col = 1
-  return (
-    // <Box
-    //   id={`row${col}`}
-    //   m={1}
-    //   css={{ width: 'auto' }}
-    //   justifyContent="center"
-    //   border={1}
-    //   borderColor="blue"
-    //   >
-      rowsArry.map( row => {
-        return (
-          <Box key={row} css={{ width: row }} border={1}
-            borderColor="green">
-            <Typography
-              variant="body2"
-              display="block"
-              gutterBottom
-              align="center"
-              >
-              {`Seccion - ${JSON.stringify(rowsArry,null,2)}  -  ${col}`}
-
-            </Typography>
-          </Box>
-        );
-      })
-    // </Box>
-  );
+  const { page, col } = props;
+  return col.map((row, i) => {
+    const TagName = row.components[0]; //We need to code to be able to include more than one component
+    if (row.width === "") {
+      return false;
+    } else {
+      return (
+        <Box key={i} css={{ width: row.width }} border={1} borderColor="green">
+          {/* <Typography
+            variant="body2"
+            display="block"
+            gutterBottom
+            align="center"
+          >
+            {`Seccion - ${JSON.stringify(row, null, 2)}  - ${TagName.slice(
+              0,
+              3
+            )}`}
+          </Typography> */}
+          <MyComponent tag={TagName.slice(0, 3)} />
+        </Box>
+      );
+    }
+  });
 };
 
 const Base3x3 = (props) => {
   const classes = useStyles(useStyles);
 
-const { page } = props
+  const { page } = props;
 
+  const colsArry = page.TagsArry.map((row) => {
+    if (row[0].width !== "" || row[1].width !== "" || row[2].width !== "")
+      return row;
+    else return [];
+  });
   return (
     <Box
-    display="flex"
-    flexDirection="row"
-    justifyContent="flex-start"
-    p={1}
-    m={0}
-    bgcolor="transparent"
-    // color="white"
-    sm={12}
-    border={1}
-    borderColor="red"
-
+      display="flex"
+      flexDirection="row"
+      justifyContent="flex-start"
+      p={1}
+      m={0}
+      bgcolor="transparent"
+      // color="white"
+      sm={12}
+      border={1}
+      borderColor="red"
     >
-      { [1,2,3].map( col => {
-        
-        const rowsArray=getRowsAndCols(page,col)
-        return( 
-
-          <ColBox key={col} col={col} rowsArry={rowsArray} />
-
-        )
+      {/* <pre>=={JSON.stringify(colsArry, null, 2)}==</pre> */}
+      {/* { [1, 2, 3].map((col) => {
+        const rowsArray = getRowsAndCols(page, col);
+      })} */}
+      {colsArry
+        .filter((r) => {
+          return r.length > 0;
         })
-      }
+        .map((col) => {
+          // return JSON.stringify(col, null, 2);
+          return <ColBox key={col} col={col} />;
+        })}
     </Box>
   );
 };
-
 
 export default Base3x3;
