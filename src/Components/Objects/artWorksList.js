@@ -3,6 +3,13 @@ import { Box, Button, List, ListItem, Paper } from "@material-ui/core";
 // import ImageTemplate from "../nav/ImageTemplate";
 import memberRoles from "../../Data/memberRoles";
 
+const imgArray = {
+  data: [
+{url: "https://loremflickr.com/320/240?random=1"},
+{url: "https://loremflickr.com/320/240?random=2"},
+{url: "https://loremflickr.com/320/240?random=3"},
+]}
+
 export default function Derecha(props) {
   return (
     <Paper>
@@ -18,10 +25,10 @@ export default function Derecha(props) {
         // flexWrap={true}
         // justifyContent="flex-start"
       >
-        {memberRoles &&
-          memberRoles.data.map((member, i) => (
+        {imgArray &&
+          imgArray.data.map(( image, i) => (
             <ListItem key={i}>
-              <pre>{member.role}</pre>
+              <img src={image.url} />
             </ListItem>
           ))}
       </List>
