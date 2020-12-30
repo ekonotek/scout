@@ -14,7 +14,7 @@ import IconButton from "@material-ui/core/IconButton";
 const useStyles = makeStyles({
   root: {
     // maxWidth: 345
-  }
+  },
 });
 
 export default function Izquierda() {
@@ -35,7 +35,7 @@ export default function Izquierda() {
           src="https://www.youtube.com/embed/ekogiCpNyFk"
         />
       </CardActionArea>
-      <CardActions disableSpacing>
+      <CardActions disablespacing="true">
         <IconButton aria-label="add to favorites">
           <FavoriteIcon />
         </IconButton>
@@ -43,7 +43,7 @@ export default function Izquierda() {
           <ShareIcon />
         </IconButton>
       </CardActions>
-      <CardContent disableSpacing>
+      <CardContent disablespacing="true">
         <Typography variant="body2" color="textSecondary" component="p">
           At vero eos et accusamus et iusto odio dignissimos ducimus qui
           blanditiis pratium voluptatum deleniti atque corrupti quos dolores et

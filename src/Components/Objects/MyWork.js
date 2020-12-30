@@ -6,9 +6,14 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     "& > *": {
-      margin: theme.spacing(1)
-    }
-  }
+      margin: theme.spacing(1),
+    },
+  },
+  avatar: {
+    fontSize: "80px",
+    width: "auto",
+    height: "auto",
+  },
 }));
 
 export default function MyWork(props) {
@@ -16,7 +21,8 @@ export default function MyWork(props) {
 
   return (
     <div className={classes.root}>
-      <Avatar alt={props.alt} src={props.src} />
+      <pre>==={JSON.stringify(props, null, 2)}===</pre>
+      <Avatar className={classes.avatar} alt={props.alto} src={props.srce} />
     </div>
   );
 }
