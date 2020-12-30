@@ -13,6 +13,7 @@ const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
+    justifyContent: "center",
   },
   appBar: {
     paddingRight: theme.spacing(3),
