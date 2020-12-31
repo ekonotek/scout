@@ -184,13 +184,13 @@ export default function SearchAppbarr(props) {
           ))}
         </List>
       </Drawer>
-      {props.children}
       <main
         className={clsx(classes.content, {
           [classes.contentShift]: open,
         })}
       >
         <div className={classes.drawerHeader} />
+        {props.children}
         <div>
           <Box sm={12} p={1} mt={0} style={{ width: "100%" }} bgcolor="#ef744c">
             <Typography variant="h3" display="block" gutterBottom>
