@@ -11,6 +11,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     justifyContent: "center",
+    maxWidth: "1168px",
   },
   hide: {
     display: "none",

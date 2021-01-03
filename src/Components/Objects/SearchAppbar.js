@@ -30,6 +30,8 @@ import ListIcon from "@material-ui/icons/List";
 import MailIcon from "@material-ui/icons/Mail";
 import MenuIcon from "@material-ui/icons/Menu";
 
+const drawerWidth = 240;
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -84,6 +86,40 @@ const useStyles = makeStyles((theme) => ({
       },
     },
   },
+  hide: {
+    display: "none",
+  },
+  drawer: {
+    width: drawerWidth,
+    flexShrink: 0,
+  },
+  drawerPaper: {
+    width: drawerWidth,
+  },
+  drawerHeader: {
+    display: "flex",
+    alignItems: "center",
+    padding: theme.spacing(0, 1),
+    // necessary for content to be below app bar
+    ...theme.mixins.toolbar,
+    justifyContent: "flex-end",
+  },
+  content: {
+    flexGrow: 1,
+    padding: theme.spacing(3),
+    transition: theme.transitions.create("margin", {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+    marginLeft: -drawerWidth,
+  },
+  contentShift: {
+    transition: theme.transitions.create("margin", {
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+    marginLeft: 0,
+  },
 }));
 
 function ListItemLink(props) {
@@ -104,17 +140,9 @@ export default function SearchAppbarr(props) {
   };
 
   return (
-    <Box
-      display="flex"
-      // flexDirection="row"
-      flexDirection="column"
-      p={0}
-      m={0}
-      bgcolor="white"
-      // color="white"
-      sm={12}
-    >
+    <div>
       {/* position="fixed" */}
+
       <AppBar
         position="static"
         style={{ backgroundColor: "#cf5636" }}
@@ -184,6 +212,16 @@ export default function SearchAppbarr(props) {
           ))}
         </List>
       </Drawer>
+      {/* <Box
+        display="flex"
+        // flexDirection="row"
+        flexDirection="column"
+        p={0}
+        m={0}
+        bgcolor="white"
+        // color="white"
+        sm={12}
+      > */}
       <main
         className={clsx(classes.content, {
           [classes.contentShift]: open,
@@ -220,6 +258,7 @@ export default function SearchAppbarr(props) {
           </Box>
         </div>
       </main>
-    </Box>
+      {/* </Box> */}
+    </div>
   );
 }
