@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import CssBaseline from "@material-ui/core/CssBaseline";
+import { MuiThemeProvider, CssBaseline } from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import Routes from "./Components/Routes/Routes";
 import SearchAppbarr from "./Components/Objects/SearchAppbar";
@@ -26,24 +26,26 @@ export default function PersistentDrawerLeft() {
   const reload = () => window.location.reload();
 
   return (
-    <Router>
-      <div className={classes.root}>
-        <CssBaseline />
+    <MuiThemeProvider theme={theme}>
+      <Router>
+        <div className={classes.root}>
+          <CssBaseline />
 
-        <SearchAppbarr>
-          <Switch>
-            <Route exact path="/public/images/account.svg" onEnter={reload} />
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/dashboard">
-              <Dashboard />
-            </Route>
-            <Routes />
-          </Switch>
-        </SearchAppbarr>
-      </div>
-    </Router>
+          <SearchAppbarr>
+            <Switch>
+              <Route exact path="/public/images/account.svg" onEnter={reload} />
+              <Route path="/about">
+                <About />
+              </Route>
+              <Route path="/dashboard">
+                <Dashboard />
+              </Route>
+              <Routes />
+            </Switch>
+          </SearchAppbarr>
+        </div>
+      </Router>
+    </MuiThemeProvider>
   );
 }
 
