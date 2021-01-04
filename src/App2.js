@@ -20,7 +20,6 @@ import InboxIcon from "@material-ui/icons/MoveToInbox";
 import ListIcon from "@material-ui/icons/List";
 import MailIcon from "@material-ui/icons/Mail";
 
-import Home from "./Components/Paginas/Home";
 import Routes from "./Components/Routes/Routes";
 import theme from "./theme";
 
