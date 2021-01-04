@@ -6,6 +6,9 @@
     "react",
     "starter"
   ],
+  "engines": {
+    "node": "14.4.0"
+  },
   "main": "src/index.js",
   "dependencies": {
     "@material-ui/core": "4.11.0",
