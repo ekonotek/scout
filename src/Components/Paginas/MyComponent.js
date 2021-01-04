@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import FooComponent from "../Objects/Izquierda";
-import BarComponent from "../Objects/Derecha";
+import FooComponent from "../Objects/izquierda";
+import BarComponent from "../Objects/derecha";
 import ArtWorksList from "../Objects/artWorksList";
 
 class MyComponent extends Component {

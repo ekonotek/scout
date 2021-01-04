@@ -196,9 +196,6 @@ export default function PersistentDrawerLeft() {
           of them to render at a time
         */}
                 <Switch>
-                  <Route exact path="/">
-                    <Home />
-                  </Route>
                   <Route path="/about">
                     <About />
                   </Route>
