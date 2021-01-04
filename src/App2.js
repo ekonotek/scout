@@ -91,6 +91,8 @@ function ListItemLink(props) {
 
 export default function PersistentDrawerLeft() {
   const classes = useStyles();
+  const reload = () => window.location.reload();
+
   // const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -196,6 +198,11 @@ export default function PersistentDrawerLeft() {
           of them to render at a time
         */}
                 <Switch>
+                  <Route
+                    exact
+                    path="/public/images/account.svg"
+                    onEnter={reload}
+                  />
                   <Route path="/about">
                     <About />
                   </Route>
