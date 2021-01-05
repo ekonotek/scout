@@ -10,7 +10,7 @@ export default function Derecha(props) {
   const [dialogOpen, setDialogOpen] = useState(null);
 
   const openLoginDialog = useCallback(() => {
-    console.log("opening Login");
+    // console.log("opening Login");
     setDialogOpen("login");
   }, [setDialogOpen]);
 
