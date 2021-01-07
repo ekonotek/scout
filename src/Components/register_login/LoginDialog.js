@@ -2,6 +2,14 @@ import React, { useState, useCallback, useRef, Fragment } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import { withRouter } from "react-router-dom";
+
+import { AUTH_TOKEN, USER_TOKEN } from "../../error/constants";
+import { flowRight as compose } from "lodash";
+import { graphql } from "react-apollo";
+import { withApollo } from "react-apollo";
+import gql from "graphql-tag";
+import SnackBarCustom from "../../error/SnackBarCustom";
+
 import {
   TextField,
   Button,
@@ -50,22 +58,58 @@ function LoginDialog(props) {
   const loginEmail = useRef();
   const loginPassword = useRef();
 
+  const _confirm = async (email, password) => {
+    await props
+      .loginMutation({
+        variables: {
+          email,
+          password,
+        },
+      })
+      .then((result) => {
+        const { token, user } = result.data.login;
+        _saveUserData(token, user);
+
+        return result.data.login;
+
+        // this.props.history.push(`/`)
+        // window.location.reload()
+      })
+      .catch((e) => {
+        const lerror = e.graphQLErrors ? e.graphQLErrors[0].message : e;
+        console.log(lerror);
+        alert(lerror);
+        return { error: lerror };
+        // this.child._openSnackBar(lerror);
+      });
+  };
+
+  const _saveUserData = (token, user) => {
+    localStorage.setItem(AUTH_TOKEN, token);
+    localStorage.setItem(USER_TOKEN, JSON.stringify(user));
+    props.client.resetStore().then(() => {
+      alert("done reseting Store of client");
+      // this.props.history.push(`/`);
+    });
+  };
+
   const login = useCallback(() => {
     setIsLoading(true);
     setStatus(null);
-    if (loginEmail.current.value !== "test@web.com") {
+
+    const result = _confirm(
+      loginEmail.current.value,
+      loginPassword.current.value
+    );
+
+    if (result.error) {
       setTimeout(() => {
-        setStatus("invalidEmail");
-        setIsLoading(false);
-      }, 1500);
-    } else if (loginPassword.current.value !== "HaRzwc") {
-      setTimeout(() => {
-        setStatus("invalidPassword");
+        setStatus(result.error);
         setIsLoading(false);
       }, 1500);
     } else {
       setTimeout(() => {
-        history.push("/c/dashboard");
+        history.push("/viewArt_2");
       }, 150);
     }
   }, [setIsLoading, loginEmail, loginPassword, history, setStatus]);
@@ -203,4 +247,39 @@ LoginDialog.propTypes = {
   status: PropTypes.string,
 };
 
-export default withRouter(withStyles(styles)(LoginDialog));
+// export default withRouter(withStyles(styles)(LoginDialog));
+const LOGIN_MUTATION = gql`
+  mutation LoginMutation($email: String!, $password: String!) {
+    login(email: $email, password: $password) {
+      token
+      user {
+        id
+        first_name
+        last_name
+        role
+        myGalleries {
+          name
+        }
+        myAgencies {
+          name
+          gallery {
+            name
+          }
+          division {
+            name
+            gender
+            minAge
+            maxAge
+          }
+        }
+      }
+    }
+  }
+`;
+
+export default compose(
+  withRouter,
+  withStyles(styles, { withTheme: true }),
+  withApollo,
+  graphql(LOGIN_MUTATION, { name: "loginMutation" })
+)(LoginDialog);
