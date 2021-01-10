@@ -1,0 +1,8 @@
+@material-ui/core @material-ui/icons
+
+apollo-cache-inmemory apollo-client apollo-link apollo-link-http apollo-link-state apollo-link-ws apollo-utilities
+
+classnames clsx
+graphql graphql-tag react-apollo react-router-dom
+subscriptions-transport-ws typeface-roboto vitesse
+
